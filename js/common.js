@@ -44,6 +44,16 @@ $(function() {
 
 	});
 
+	$('div.tab-controls__list').on('click', '.tab-controls__toggle:not(.tab-controls__toggle_active)', function() {
+		$(this)
+		  .addClass('tab-controls__toggle_active').siblings().removeClass('tab-controls__toggle_active')
+		  .closest('.tab-controls').closest('.workers-tab').find('.tab-content').find('.workers-tab__item').removeClass('workers-tab__item_active').eq($(this).index()).addClass('workers-tab__item_active');
+	  });
+
+	
+
+	
+
 
 
 });
