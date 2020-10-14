@@ -4,6 +4,7 @@ $(function() {
 	let dillersSlider = $('.dillers-slider');
 	let videoFeedbacks = $('.video-feedbacks__slider');
 	let screenshotFeedback = $('.screenshot-feedback__slider');
+	let imageSlider = $('.image-slider__slider');
 
 	appealSlider.slick({
 		slidesToShow: 1,
@@ -33,6 +34,14 @@ $(function() {
 		prevArrow: $('.screenshot-feedback .slider-arrow_prev'),
 		nextArrow: $('.screenshot-feedback .slider-arrow_next'),
 		dots: true,
+	});
+
+	imageSlider.slick({
+		slidesToShow: 1,
+		prevArrow: $('.image-slider .slider-arrow_prev'),
+		nextArrow: $('.image-slider .slider-arrow_next'),
+		dots: true,
+
 	});
 
 
