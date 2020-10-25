@@ -20,6 +20,10 @@ $(function() {
 		prevArrow: $('.dillers .slider-arrow_prev'),
 		nextArrow: $('.dillers .slider-arrow_next'),
 		dots: true,
+		responsive: [{
+			breakpoint: 767,
+			settings: "unslick",
+		}]
 	});
 
 	videoFeedbacks.slick({
@@ -27,6 +31,10 @@ $(function() {
 		prevArrow: $('.video-feedbacks .slider-arrow_prev'),
 		nextArrow: $('.video-feedbacks .slider-arrow_next'),
 		dots: true,
+		responsive: [{
+			breakpoint: 767,
+			settings: "unslick",
+		}]
 	});
 
 	screenshotFeedback.slick({
@@ -34,6 +42,10 @@ $(function() {
 		prevArrow: $('.screenshot-feedback .slider-arrow_prev'),
 		nextArrow: $('.screenshot-feedback .slider-arrow_next'),
 		dots: true,
+		responsive: [{
+			breakpoint: 767,
+			settings: "unslick",
+		}]
 	});
 
 	imageSlider.slick({
