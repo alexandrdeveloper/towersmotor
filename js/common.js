@@ -43,6 +43,11 @@ $(function() {
 		nextArrow: $('.screenshot-feedback .slider-arrow_next'),
 		dots: true,
 		responsive: [{
+			breakpoint: 992,
+			settings: {
+				slidesToShow: 2,
+			}
+		},{
 			breakpoint: 767,
 			settings: "unslick",
 		}]
