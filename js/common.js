@@ -131,8 +131,23 @@ $(function() {
 		}
 		
 	});
+    
 	
+	gsap.timeline().from('.menu__box', {duration: 1, opacity: 0, y: -200})				   
+				   .from('.logo__link', {opacity: 0, duration: 1})
+				   .from('.header-address', {duration: .3, y: 20, opacity: 0}, "-=.5")
+				   .from('.header-contacts', {duration: .3, y: 20, opacity: 0}, "-=.3" )
+				   .from('.header-top__breadcrumbs', {duration: 1, opacity: 0});
 
+	gsap.registerPlugin(ScrollTrigger);
+
+	
+	gsap.from(".section-title", {
+		scrollTrigger: ".section-title",
+		x: 100,
+		opacity: 0,
+		duration: .3,
+	});
 	
 
 
