@@ -131,23 +131,189 @@ $(function() {
 		}
 		
 	});
+
+	/*Animation*/
     
-	
-	gsap.timeline().from('.menu__box', {duration: 1, opacity: 0, y: -200})				   
+	let heroContentAnim = gsap.timeline();
+	heroContentAnim.from('.menu__box', {duration: 1, opacity: 0, y: -200})				   
 				   .from('.logo__link', {opacity: 0, duration: 1})
 				   .from('.header-address', {duration: .3, y: 20, opacity: 0}, "-=.5")
 				   .from('.header-contacts', {duration: .3, y: 20, opacity: 0}, "-=.3" )
-				   .from('.header-top__breadcrumbs', {duration: 1, opacity: 0});
+				   .from('.header-top__breadcrumbs', {duration: 1, opacity: 0})
+				   .from('.hero-title', {duration: .3, y: 100, opacity: 0})
+				   .from('.hero-description', {duration: .3, y: 100, opacity: 0})
+				   .from('.hero-form', {duration: .8, y: 100, opacity: 0}, "-=.1");
+
+	let heroCar = gsap.timeline();
+	heroCar.from('.car', {duration: 4, x: "400%"})
+		   .to('.car-wheel', {duration: 4, rotate: -7650}, "-=4")
+		   .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.8")
+		   .to('.car-body', {duration: .3, rotate: 0});
 
 	gsap.registerPlugin(ScrollTrigger);
+	
+	
+	const titleAnim = gsap.utils.toArray('.section-title');
+	titleAnim.forEach((text, i) => {	
+
+		gsap.from(text, {
+			x: 300,
+			opacity: 0,
+			duration: 1,
+			scrollTrigger: {
+				trigger: text,
+				start: "top 90%",
+				end: "top 20%",
+			}
+		});
+	});
+
+
+	gsap.from(".numbered-item", {
+		scrollTrigger: {
+			trigger: '.numbered-list',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: .5, 
+		x: 50, 
+		opacity: 0, 
+		stagger: .2
+	});
+
+	gsap.from(".team-text p", {
+		scrollTrigger: {
+			trigger: 'section.team',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: 1, 
+		y: 50, 
+		opacity: 0, 
+		stagger: .2
+	});
+
+	gsap.from(".team-list__item", {
+		scrollTrigger: {
+			trigger: '.team-list',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: .5,
+		x: 50, 
+		opacity: 0, 
+		stagger: .2
+	});
+
+	gsap.from(".team-gallery__item", {
+		scrollTrigger: {
+			trigger: '.team-gallery',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: .5,
+		x: 50, 
+		opacity: 0, 
+		stagger: .2
+	});
+	gsap.from(".gallery-large__img", {
+		scrollTrigger: {
+			trigger: '.team-gallery',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: .5,
+		x: -100, 
+		opacity: 0
+	});
+
+	gsap.from(".tour-box", {
+		scrollTrigger: {
+			trigger: '.tour-box',
+			start: "top 90%",
+			end: "top 20%",
+		},
+		duration: .5,
+		y: 100, 
+		opacity: 0
+	});
+
+
+	gsap.from('.carlist__row', {
+		duration: .6,
+		y: 100,
+		opacity: 0,
+		stagger: .3,
+		scrollTrigger: {
+			trigger: '.carlist-container',
+			start: "top 90%",
+			end: "top 10%",
+		},
+	});
+
+	gsap.from('.homeform input', {
+		duration: .6,
+		y: 100,
+		opacity: 0,
+		stagger: .3,
+		scrollTrigger: {
+			trigger: '.homeform',
+			start: "top 90%",
+			end: "top 10%",
+		},
+	});
+
+	gsap.from('.homeform textarea', {
+		duration: .6,
+		y: 100,
+		opacity: 0,
+		delay: 1.6,
+		scrollTrigger: {
+			trigger: '.homeform',
+			start: "top 90%",
+			end: "top 10%",
+		},
+	});
+
+	gsap.from('.homeform-car', {
+		duration: 2,		
+		opacity: 0,
+		scrollTrigger: {
+			trigger: '.homeform',
+			start: "top 90%",
+			end: "top 10%",
+		},
+	});
+
+	gsap.from('.home-contacts__item', {
+		duration: .6,
+		x: -100,
+		opacity: 0,
+		stagger: .3,
+		scrollTrigger: {
+			trigger: '.home-contacts',
+			start: "top 90%",
+			end: "top 10%",
+		},
+	});
+
+	gsap.from('.guide-social__item', {
+		duration: .6,
+		x: 30,
+		opacity: 0,
+		stagger: .3,
+		scrollTrigger: {
+			trigger: '.guide-info',
+			start: "top 85%",
+			end: "top 10%",
+		},
+	});
+
+
+
 
 	
-	gsap.from(".section-title", {
-		scrollTrigger: ".section-title",
-		x: 100,
-		opacity: 0,
-		duration: .3,
-	});
+		
 	
 
 
