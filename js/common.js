@@ -135,7 +135,7 @@ $(function() {
 	/*Animation*/
     
 	let heroContentAnim = gsap.timeline();
-	heroContentAnim.from('.menu__box', {duration: 1, opacity: 0, y: -200})				   
+	heroContentAnim.from('.men32u__box', {duration: 1, opacity: 0, y: -200})				   
 				   .from('.logo__link', {opacity: 0, duration: 1})
 				   .from('.header-address', {duration: .3, y: 20, opacity: 0}, "-=.5")
 				   .from('.header-contacts', {duration: .3, y: 20, opacity: 0}, "-=.3" )
@@ -146,7 +146,7 @@ $(function() {
 
 	let heroCar = gsap.timeline();
 	heroCar.from('.car', {duration: 4, x: "400%"})
-		   .to('.car-wheel', {duration: 4, rotate: -7650}, "-=4")
+		   .to('.car-wheel, .car-brake', {duration: 4, rotate: -7650}, "-=4")
 		   .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.8")
 		   .to('.car-body', {duration: .3, rotate: 0});
 
