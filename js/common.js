@@ -144,24 +144,7 @@ $(function() {
 				   .from('.hero-description', {duration: .3, y: 100, opacity: 0})
 				   .from('.hero-form', {duration: .8, y: 100, opacity: 0}, "-=.1");
 
-	let heroCar = gsap.timeline();
-	let carWay = $(window).innerWidth();
-	let carWheel = $('.car').find('.car-wheel');
-	let carWheelD = carWheel.innerWidth();
-	let carWheelP = carWheelD * 3.14;
-	let carWheelRotate = carWay / carWheelP;
-	let carWheelRotateV = -360 * carWheelRotate;
-	console.log('Длина пути автомобиля ' + carWay);
-	console.log("Диаметр колеса " + carWheelD);
-	console.log("Длина окружности колеса " + carWheelP);
-	console.log("Количество оборотов колеса " + carWheelRotate);
-
-
-
-	heroCar.from('.car', {duration: 1.6, x: carWay})
-		   .to('.car-wheel, .car-brake', {duration: 1.6, rotate: carWheelRotateV}, "-=1.6")
-		   .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.4")
-		   .to('.car-body', {duration: .3, rotate: 0});
+	
 
 	gsap.registerPlugin(ScrollTrigger);
 	
@@ -173,6 +156,7 @@ $(function() {
 			x: 300,
 			opacity: 0,
 			duration: 1,
+			ease: "power3.out",
 			scrollTrigger: {
 				trigger: text,
 				start: "top 90%",
@@ -191,7 +175,8 @@ $(function() {
 		duration: .5, 
 		x: 50, 
 		opacity: 0, 
-		stagger: .2
+		stagger: .2,
+		ease: "power3.out",
 	});
 
 	gsap.from(".team-text p", {
@@ -203,7 +188,8 @@ $(function() {
 		duration: 1, 
 		y: 50, 
 		opacity: 0, 
-		stagger: .2
+		stagger: .2,
+		ease: "power3.out",
 	});
 
 	gsap.from(".team-list__item", {
@@ -227,7 +213,8 @@ $(function() {
 		duration: .5,
 		x: 50, 
 		opacity: 0, 
-		stagger: .2
+		stagger: .2,
+		ease: "power3.out",
 	});
 	gsap.from(".gallery-large__img", {
 		scrollTrigger: {
@@ -237,7 +224,8 @@ $(function() {
 		},
 		duration: .5,
 		x: -100, 
-		opacity: 0
+		opacity: 0,
+		ease: "power3.out",
 	});
 
 	gsap.from(".tour-box", {
@@ -248,7 +236,8 @@ $(function() {
 		},
 		duration: .5,
 		y: 100, 
-		opacity: 0
+		opacity: 0,
+		ease: "power3.out",
 	});
 
 
@@ -257,6 +246,7 @@ $(function() {
 		y: 100,
 		opacity: 0,
 		stagger: .3,
+		ease: "power3.out",
 		scrollTrigger: {
 			trigger: '.carlist-container',
 			start: "top 90%",
@@ -269,6 +259,7 @@ $(function() {
 		y: 100,
 		opacity: 0,
 		stagger: .3,
+		ease: "power3.out",
 		scrollTrigger: {
 			trigger: '.homeform',
 			start: "top 90%",
@@ -291,6 +282,7 @@ $(function() {
 	gsap.from('.homeform-car', {
 		duration: 2,		
 		opacity: 0,
+		ease: "power3.out",
 		scrollTrigger: {
 			trigger: '.homeform',
 			start: "top 90%",
@@ -303,6 +295,7 @@ $(function() {
 		x: -100,
 		opacity: 0,
 		stagger: .3,
+		ease: "power3.out",
 		scrollTrigger: {
 			trigger: '.home-contacts',
 			start: "top 90%",
@@ -315,12 +308,48 @@ $(function() {
 		x: 30,
 		opacity: 0,
 		stagger: .3,
+		ease: "power3.out",
 		scrollTrigger: {
 			trigger: '.guide-info',
 			start: "top 85%",
 			end: "top 10%",
 		},
 	});
+
+
+	let preloaderAnim = gsap.timeline({delay: .5});
+
+	preloaderAnim.to('.preloader-logo', {opacity: 1, duration: .4})
+	.to('.preloader-logo', {
+		y: -200,
+		duration: 1,
+		delay: 2,
+		ease: "power3.out",
+	})
+	.to('.preloader', {
+		y: "-120%",
+		duration: 1,
+		ease: "power3.out",
+	}, "-=.5");
+
+	let heroCar = gsap.timeline({delay: 4.5});
+	let carWay = $(window).innerWidth();
+	let carWheel = $('.car').find('.car-wheel');
+	let carWheelD = carWheel.innerWidth();
+	let carWheelP = carWheelD * 3.14;
+	let carWheelRotate = carWay / carWheelP;
+	let carWheelRotateV = -360 * carWheelRotate;
+	console.log('Длина пути автомобиля ' + carWay);
+	console.log("Диаметр колеса " + carWheelD);
+	console.log("Длина окружности колеса " + carWheelP);
+	console.log("Количество оборотов колеса " + carWheelRotate);
+
+
+
+	heroCar.from('.car', {duration: 2, x: carWay, ease: "power1.inOut",})
+		   .to('.car-wheel, .car-brake', {duration: 2, rotate: carWheelRotateV, ease: "power1.inOut",}, "-=2")
+		   .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.4")
+		   .to('.car-body', {duration: .3, rotate: 0});
 
 
 
