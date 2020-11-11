@@ -1,5 +1,7 @@
 $(function() {
 
+	$('.input-phone').inputmask("+ 7 (999) 999 - 99 - 99");
+
 	let appealSlider = $('.appeal-slider');
 	let dillersSlider = $('.dillers-slider');
 	let videoFeedbacks = $('.video-feedbacks__slider');
@@ -131,6 +133,9 @@ $(function() {
 		}
 		
 	});
+
+
+	
 
 	
 

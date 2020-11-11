@@ -174,18 +174,7 @@ $(function() {
             },
         });
 
-        gsap.from('.guide-social__item', {
-            duration: .6,
-            x: 30,
-            opacity: 0,
-            stagger: .3,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: '.guide-info',
-                start: "top 85%",
-                end: "top 10%",
-            },
-        });
+       
 
         gsap.from('.theme-table__row', {
             duration: .6,
