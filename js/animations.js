@@ -3,21 +3,31 @@ $(function() {
     let winW = $(window).innerWidth();
 
     if (winW > 767) {
-        /*Animation*/	
-    
-        let heroContentAnim = gsap.timeline();
-        heroContentAnim.from('.men32u__box', {duration: 1, opacity: 0, y: -200})				   
-                    .from('.logo__link', {opacity: 0, duration: 1})
-                    .from('.header-address', {duration: .3, y: 20, opacity: 0}, "-=.5")
-                    .from('.header-contacts', {duration: .3, y: 20, opacity: 0}, "-=.3" )
-                    .from('.header-top__breadcrumbs', {duration: 1, opacity: 0})
-                    .from('.hero-title', {duration: .3, y: 100, opacity: 0})
-                    .from('.hero-description', {duration: .3, y: 100, opacity: 0})
-                    .from('.hero-form', {duration: .8, y: 100, opacity: 0}, "-=.1");
+        /*Animation*/      
 
         
 
         gsap.registerPlugin(ScrollTrigger);
+
+
+        let heroCar = gsap.timeline();
+        let carWay = $(window).innerWidth();
+        let carWheel = $('.car').find('.car-wheel');
+        let carWheelD = carWheel.innerWidth();
+        let carWheelP = carWheelD * 3.14;
+        let carWheelRotate = carWay / carWheelP;
+        let carWheelRotateV = -360 * carWheelRotate;
+        console.log('Длина пути автомобиля ' + carWay);
+        console.log("Диаметр колеса " + carWheelD);
+        console.log("Длина окружности колеса " + carWheelP);
+        console.log("Количество оборотов колеса " + carWheelRotate);
+
+
+
+        heroCar.from('.car', {duration: 2, x: carWay, ease: "power1.inOut",})
+            .to('.car-wheel, .car-brake', {duration: 2, rotate: carWheelRotateV, ease: "power1.inOut",}, "-=2")
+            .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.4")
+            .to('.car-body', {duration: .3, rotate: 0});
         
         
         const titleAnim = gsap.utils.toArray('.section-title');
@@ -333,24 +343,7 @@ $(function() {
             ease: "power3.out",
         }, "-=.5");
 
-        let heroCar = gsap.timeline({delay: 4.5});
-        let carWay = $(window).innerWidth();
-        let carWheel = $('.car').find('.car-wheel');
-        let carWheelD = carWheel.innerWidth();
-        let carWheelP = carWheelD * 3.14;
-        let carWheelRotate = carWay / carWheelP;
-        let carWheelRotateV = -360 * carWheelRotate;
-        console.log('Длина пути автомобиля ' + carWay);
-        console.log("Диаметр колеса " + carWheelD);
-        console.log("Длина окружности колеса " + carWheelP);
-        console.log("Количество оборотов колеса " + carWheelRotate);
-
-
-
-        heroCar.from('.car', {duration: 2, x: carWay, ease: "power1.inOut",})
-            .to('.car-wheel, .car-brake', {duration: 2, rotate: carWheelRotateV, ease: "power1.inOut",}, "-=2")
-            .to('.car-body', {duration: .5, rotate: -0.4}, "-=0.4")
-            .to('.car-body', {duration: .3, rotate: 0});
+        
 
 
     }
