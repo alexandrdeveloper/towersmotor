@@ -27,6 +27,9 @@ $(function() {
 			settings: "unslick",
 		}]
 	});
+	$(window).resize(function(){		
+		dillersSlider.slick('resize');
+	});
 
 	videoFeedbacks.slick({
 		slidesToShow: 2,
@@ -37,6 +40,9 @@ $(function() {
 			breakpoint: 767,
 			settings: "unslick",
 		}]
+	});
+	$(window).resize(function(){		
+		videoFeedbacks.slick('resize');
 	});
 
 	screenshotFeedback.slick({
@@ -54,6 +60,9 @@ $(function() {
 			settings: "unslick",
 		}]
 	});
+	$(window).resize(function(){		
+		screenshotFeedback.slick('resize');
+	});
 
 	imageSlider.slick({
 		slidesToShow: 1,
@@ -61,6 +70,9 @@ $(function() {
 		nextArrow: $('.image-slider .slider-arrow_next'),
 		dots: true,
 
+	});
+	$(window).resize(function(){		
+		imageSlider.slick('resize');
 	});
 
 	let vacanciesSlider = $('.vacancies-list');
@@ -70,6 +82,9 @@ $(function() {
 		prevArrow: $('.vacancies-content .slider-arrow_prev'),
 		nextArrow: $('.vacancies-content .slider-arrow_next'),
 		dots: true,
+	});
+	$(window).resize(function(){		
+		vacanciesSlider.slick('resize');
 	});
 
 	$('div.tab-controls__list').on('click', '.tab-controls__toggle:not(.tab-controls__toggle_active)', function() {
@@ -93,14 +108,15 @@ $(function() {
 
 	$('.menu-toggle').on('click', function(e){
 		e.preventDefault();
-		$('.navbar, .menu-close').fadeIn(300);
+		$('.header-top').addClass('header-top_mobile-visible');
+		$('.menu-close').fadeIn(300);
 		$(this).fadeOut(300);
 	});
 
 	$('.menu-close').on('click', function(e){
 		e.preventDefault();
 		$(this).fadeOut(300);
-		$('.navbar').fadeOut(300);
+		$('.header-top').removeClass('header-top_mobile-visible');
 		$('.menu-toggle').fadeIn(300);
 	});
 
