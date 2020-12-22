@@ -10,8 +10,8 @@ $(function() {
 
 	appealSlider.slick({
 		slidesToShow: 1,
-		prevArrow: $('.appeal-row .slider-arrow_prev'),
-		nextArrow: $('.appeal-row .slider-arrow_next'),
+		prevArrow: $('.appeal .slider-arrow_prev'),
+		nextArrow: $('.appeal .slider-arrow_next'),
 		dots: true 
 	});	
 
@@ -122,7 +122,9 @@ $(function() {
 
 	$('.submenu>a').on('click', function(e) {
 		e.preventDefault();
+		$(this).toggleClass('opened');
 		$('.submenu-list').slideToggle();
+
 	});
 
 	$('.gallery-popup').magnificPopup({
