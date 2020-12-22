@@ -1,8 +1,10 @@
 $(function() {
 
 	
-
-	baron('.numbered-box');
+	$('.numbered-list').jScrollPane({
+		horizontalArrowPositions: true
+	});
+	
 
 	$('.input-phone').inputmask("+ 7 (999) 999 - 99 - 99");
 
