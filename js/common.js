@@ -1,5 +1,9 @@
 $(function() {
 
+	
+
+	baron('.numbered-box');
+
 	$('.input-phone').inputmask("+ 7 (999) 999 - 99 - 99");
 
 	let appealSlider = $('.appeal-slider');
@@ -179,7 +183,10 @@ $(function() {
 			});
 		});
 
-
+		
+		
+		
+		
 		
 
 
