@@ -1,9 +1,17 @@
 $(function() {
 
 	
-	$('.numbered-list').jScrollPane({
-		horizontalArrowPositions: true
+	$(window).ready(function(){		
+		if ($(this).innerWidth() < 767) {
+			$('.numbered-list, .team-list, .brand-container, .dillers-container, .video-feedbacks, .screenshot, .footer-brands, .footer-services').jScrollPane({
+				horizontalArrowPositions: true
+			});
+		} else {
+			return false;
+		}
 	});
+
+	
 	
 
 	$('.input-phone').inputmask("+ 7 (999) 999 - 99 - 99");
